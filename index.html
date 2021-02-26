@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Weight Converter</title>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <style>
+   body {
+    margin-top: 50px;
+   
+    margin-left: 500px;
+  
+    background-color: goldenrod;
+   }
+   
+  </style>
+</head>
+<body>
+  <div class="container">
+   <div class="row">
+    <div class="col-md-5">
+     <h1 class="Display-4 text-center" style="text-align: center;">Weight Converter</h1>
+     <form>
+      <div class="form-group">
+       <input id="kgsinput" type="number" class="form-control form-control-lg" placeholder="Enter Kg....">
+      </div>
+     </form>
+     <div id="output">
+      <div class="card mb-2">
+       <div class="card-block">
+        <h4>pounds:</h4>
+        <div id="poundsoutput">
+
+        </div>
+       </div>
+      </div>
+      <div class="card mb-2">
+       <div class="card-block">
+        <h4>grams:</h4>
+        <div id="gramsoutput">
+
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+
+  <script>
+   document.getElementById('output').style.visibility = 'hidden';
+   document.getElementById("kgsinput").addEventListener('input',function(e){
+    document.getElementById('output').style.visibility = 'visible';
+    let kg = e.target.value;
+    document.getElementById('poundsoutput').innerHTML = kg*2.2;
+    document.getElementById('gramsoutput').innerHTML = kg*1000
+   });
+  </script>
+</body>
+</html>
